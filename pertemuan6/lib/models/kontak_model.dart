@@ -1,8 +1,3 @@
-// =============================================================
-// FILE: models/kontak_model.dart
-// DESKRIPSI: Model data kontak dan enum kategori kontak.
-// =============================================================
-
 /// Kategori kontak yang tersedia dalam aplikasi.
 enum KategoriKontak {
   keluarga,
@@ -10,7 +5,6 @@ enum KategoriKontak {
   kerja,
 }
 
-/// Model yang merepresentasikan sebuah kontak.
 class KontakModel {
   final String id;
   final String namaLengkap;
@@ -28,7 +22,6 @@ class KontakModel {
     required this.kategori,
   });
 
-  /// Mengambil inisial nama (maksimal 2 karakter) untuk avatar.
   String get inisial {
     final bagian = namaLengkap.trim().split(RegExp(r'\s+'));
     if (bagian.isEmpty || bagian.first.isEmpty) return '?';
@@ -39,7 +32,6 @@ class KontakModel {
         .toUpperCase();
   }
 
-  /// Label kategori dalam bentuk string yang dapat ditampilkan ke pengguna.
   String get labelKategori {
     switch (kategori) {
       case KategoriKontak.keluarga:
