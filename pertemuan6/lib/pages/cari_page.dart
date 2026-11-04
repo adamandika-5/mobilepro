@@ -1,15 +1,8 @@
-// =============================================================
-// FILE: pages/cari_page.dart
-// DESKRIPSI: Halaman pencarian dan penyaringan kontak berdasarkan
-//            kategori menggunakan package 'dropdown_search' v7.0.0.
-// =============================================================
-
 import 'package:flutter/material.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:intl/intl.dart';
 import '../models/kontak_model.dart';
 
-/// Halaman pencarian dan filter kontak berdasarkan kategori.
 class CariPage extends StatefulWidget {
   final List<KontakModel> daftarKontak;
 
@@ -20,7 +13,6 @@ class CariPage extends StatefulWidget {
 }
 
 class _CariPageState extends State<CariPage> {
-  // Pilihan kategori aktif. null atau 'Semua Kontak' berarti menampilkan seluruh kontak.
   String? _kategoriDipilih;
 
   static const List<String> _opsiKategori = [
@@ -30,7 +22,6 @@ class _CariPageState extends State<CariPage> {
     'Kerja',
   ];
 
-  /// Menyaring daftar kontak berdasarkan kategori yang dipilih.
   List<KontakModel> get _kontakTerfilter {
     if (_kategoriDipilih == null || _kategoriDipilih == 'Semua Kontak') {
       return widget.daftarKontak;
@@ -71,9 +62,6 @@ class _CariPageState extends State<CariPage> {
       ),
       body: Column(
         children: [
-          // ==========================================================
-          // FILTER DROPDOWN
-          // ==========================================================
           Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
@@ -98,7 +86,6 @@ class _CariPageState extends State<CariPage> {
                 ),
                 const SizedBox(height: 8),
 
-                // Widget DropdownSearch versi 7.0.0
                 DropdownSearch<String>(
                   items: (filter, loadProps) => _opsiKategori,
                   selectedItem: _kategoriDipilih ?? 'Semua Kontak',
@@ -145,7 +132,6 @@ class _CariPageState extends State<CariPage> {
                 ),
                 const SizedBox(height: 12),
 
-                // Indikator jumlah kontak yang ditemukan
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
@@ -179,9 +165,6 @@ class _CariPageState extends State<CariPage> {
             ),
           ),
 
-          // ==========================================================
-          // DAFTAR HASIL FILTER
-          // ==========================================================
           Expanded(
             child: hasil.isEmpty
                 ? Center(
