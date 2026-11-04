@@ -1,13 +1,7 @@
-// =============================================================
-// FILE: pages/kontak_page.dart
-// DESKRIPSI: Halaman daftar semua kontak pengguna.
-// =============================================================
-
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../models/kontak_model.dart';
 
-/// Halaman yang menampilkan seluruh daftar kontak.
 class KontakPage extends StatelessWidget {
   final List<KontakModel> daftarKontak;
 
