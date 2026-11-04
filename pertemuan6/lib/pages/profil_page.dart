@@ -1,14 +1,6 @@
-// =============================================================
-// FILE: pages/profil_page.dart
-// DESKRIPSI: Halaman profil mahasiswa dengan efek AvatarGlow
-//            dari package 'avatar_glow' v3.0.1.
-// =============================================================
-
 import 'package:flutter/material.dart';
 import 'package:avatar_glow/avatar_glow.dart';
 
-/// Widget halaman Profil.
-/// Menampilkan identitas mahasiswa dengan efek cahaya AvatarGlow.
 class ProfilPage extends StatelessWidget {
   const ProfilPage({super.key});
 
@@ -37,9 +29,7 @@ class ProfilPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // ================================================
-                // FOTO PROFIL dengan efek AvatarGlow v3.0.1
-                // ================================================
+
                 AvatarGlow(
                   glowColor: colorScheme.primary,
                   glowCount: 3,
@@ -68,9 +58,6 @@ class ProfilPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 32),
 
-                // ================================================
-                // NAMA MAHASISWA
-                // ================================================
                 Text(
                   'Adam Andika Sukma',
                   style: textTheme.headlineSmall?.copyWith(
@@ -81,11 +68,8 @@ class ProfilPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
 
-                // ================================================
-                // NIM MAHASISWA
-                // ================================================
                 Text(
-                  'NIM: 4124991',
+                  'NIM: 4124001',
                   style: textTheme.bodyLarge?.copyWith(
                     color: colorScheme.onSurfaceVariant,
                     letterSpacing: 1.2,
