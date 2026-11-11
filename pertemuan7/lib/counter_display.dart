@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Widget untuk menampilkan nilai counter.
-/// Menerima nilai counter melalui constructor parameter dari parent.
 class CounterDisplay extends StatelessWidget {
   final int counter;
 
