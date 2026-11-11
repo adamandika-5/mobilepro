@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Widget untuk tombol-tombol counter.
-/// Menerima tiga callback function dari parent:
-/// [onAdd], [onSubtract], dan [onReset].
-/// Logika perubahan nilai counter tetap di parent.
 class CounterButtons extends StatelessWidget {
   final VoidCallback onAdd;
   final VoidCallback onSubtract;
@@ -21,11 +17,10 @@ class CounterButtons extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        // Baris tombol Tambah dan Kurang
+        
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Tombol Kurang
             ElevatedButton.icon(
               onPressed: onSubtract,
               icon: const Icon(Icons.remove),
@@ -42,7 +37,6 @@ class CounterButtons extends StatelessWidget {
               ),
             ),
             const SizedBox(width: 16),
-            // Tombol Tambah
             ElevatedButton.icon(
               onPressed: onAdd,
               icon: const Icon(Icons.add),
@@ -61,7 +55,6 @@ class CounterButtons extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 16),
-        // Tombol Reset
         OutlinedButton.icon(
           onPressed: onReset,
           icon: const Icon(Icons.refresh),
