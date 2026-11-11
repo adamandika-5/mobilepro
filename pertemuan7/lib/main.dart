@@ -7,7 +7,6 @@ void main() {
   runApp(const MyApp());
 }
 
-/// Widget root aplikasi.
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -25,8 +24,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-/// Halaman utama yang mengelola tampilan counter
-/// dan menyediakan tombol untuk menguji widget lifecycle.
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -35,8 +32,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  /// Mengontrol apakah widget CounterPage sedang ditampilkan.
-  /// Digunakan untuk menguji lifecycle (initState / dispose).
   bool _showCounter = true;
 
   @override
@@ -46,7 +41,6 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Counter App'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
-          // Tombol kecil untuk menguji lifecycle (mount / unmount)
           TextButton.icon(
             onPressed: () {
               setState(() {
@@ -86,9 +80,6 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-/// Widget StatefulWidget utama yang mengelola state counter.
-/// Mengimplementasikan initState() dan dispose() untuk
-/// mendemonstrasikan widget lifecycle.
 class CounterPage extends StatefulWidget {
   const CounterPage({super.key});
 
@@ -111,15 +102,12 @@ class _CounterPageState extends State<CounterPage> {
     super.dispose();
   }
 
-  /// Menambah counter sebanyak 1.
   void _increment() {
     setState(() {
       _counter++;
     });
   }
 
-  /// Mengurangi counter sebanyak 1.
-  /// Tidak akan mengurangi jika counter sudah 0.
   void _decrement() {
     setState(() {
       if (_counter > 0) {
@@ -128,7 +116,6 @@ class _CounterPageState extends State<CounterPage> {
     });
   }
 
-  /// Mengembalikan counter ke 0.
   void _reset() {
     setState(() {
       _counter = 0;
@@ -143,10 +130,8 @@ class _CounterPageState extends State<CounterPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // Menampilkan counter melalui widget terpisah
             CounterDisplay(counter: _counter),
             const SizedBox(height: 40),
-            // Tombol-tombol counter melalui widget terpisah
             CounterButtons(
               onAdd: _increment,
               onSubtract: _decrement,
